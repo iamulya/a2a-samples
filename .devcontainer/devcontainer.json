@@ -1,0 +1,28 @@
+{
+  "name": "Mesop Codespace (uv)",
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": { "version": "3.11" }
+  },
+  "containerEnv": {
+    "PORT": "8080",
+    "MESOP_BASE_URL_PATH": ""
+  },
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {
+      "label": "Mesop",
+      "protocol": "https",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "bash -lc 'curl -LsSf https://astral.sh/uv/install.sh | sh && ~/.local/bin/uv sync'",
+  "postStartCommand": "bash -lc '~/.local/bin/uv run gunicorn main:me -b 0.0.0.0:$PORT --proxy-headers --forwarded-allow-ips=\"*\"'",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
+      }
+    }
+  }
+}

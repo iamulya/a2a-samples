@@ -59,6 +59,9 @@ Contributions welcome! See the [Contributing Guide](CONTRIBUTING.md).
 
 Please use the [issues page](https://github.com/a2aproject/a2a-samples/issues) to provide suggestions, feedback or submit a bug report.
 
+## Commands to run
+cd demo/ui && uv sync && uv run main.py
+
 ## Disclaimer
 
 This repository itself is not an officially supported Google product. The code in this repository is for demonstrative purposes only.

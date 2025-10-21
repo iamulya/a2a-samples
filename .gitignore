@@ -183,3 +183,4 @@ Thumbs.db
 .aidy/
 
 .ruff_cache
+uv.lock
